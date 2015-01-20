@@ -46,8 +46,6 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="com.xamarin.XamStore.apk">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <None Include="com.xamarin.XamStore.apk" />
   </ItemGroup>
 </Project>

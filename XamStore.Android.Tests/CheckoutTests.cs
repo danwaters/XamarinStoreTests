@@ -2,6 +2,8 @@
 using Xamarin.UITest;
 using Xamarin.UITest.Android;
 using Xamarin.UITest.iOS;
+using Xamarin.UITest.Queries;
+using System;
 
 namespace XamStore.Android.Tests
 {
