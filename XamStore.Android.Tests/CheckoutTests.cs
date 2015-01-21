@@ -12,15 +12,23 @@ namespace XamStore.Android.Tests
 	{
 		private IApp app;
 		private const string apkPath = "com.xamarin.XamStore.apk";
-		private const string apiKey = "357dcfa9b9cd1b8a7497010cead85113";
+		private const string apiKey = "YOUR_API_KEY_HERE";
 
 		[SetUp]
 		public void Setup()
 		{
 			app = ConfigureApp.Android.ApiKey (apiKey).ApkFile (apkPath).StartApp ();
 		}
+
+		[Test]
+		[TestCase(TestName="Hello")]
+		public void DoesNothing()
+		{
+			app.Screenshot ("This app does nothing");
+		}
 			
 		[Test]
+		[TestCase(TestName="Checking that stuff out")]
 		public void CheckingOut ()
 		{
 			// Uncomment this line to activate the C# REPL. Try typing these commands into it:
@@ -67,7 +75,7 @@ namespace XamStore.Android.Tests
 
 
 /* Run this command to upload:
-mono xut-console.exe submit ../../../XamStore.Android.Tests/com.xamarin.XamStore.apk YOUR_API_KEY --devices 14acbe9e --series "master" --locale "en_US" --app-name "Xamarin Store" --assembly-dir ../../../XamStore.Android.Tests/bin/Debug/
+mono test-cloud.exe submit ../../../XamStore.Android.Tests/com.xamarin.XamStore.apk API_KEY --devices 14acbe9e --series "master" --locale "en_US" --app-name "Xamarin Store" --assembly-dir ../../../XamStore.Android.Tests/bin/Debug/
 */
 
 /*
